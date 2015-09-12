@@ -1,5 +1,6 @@
-class List
 
+
+class List
   @template =
     name: null
     lastStatus: null
@@ -16,22 +17,21 @@ class List
 
   constructor: (@robot) ->
     loadStore = =>
-      @store = robot.brain.data.stalkers_notes || {};
-      @robot.logger.debug "Plus Plus Data Loaded: " + JSON.stringify(@storage, null, 2)
+      @store = @robot.brain.data.stalkers_notes || {};
+      @robot.logger.debug "Stalkers Notes Loaded: " + JSON.stringify(@store, null, 2)
     @robot.brain.on "loaded", loadStore
 
 
   follow: (user) ->
-    store[user].following = true
+    @store[user].following = true
 
   following: (user) ->
-    store[user].following
+    @store[user].following
 
   saveStatus: (user, status) ->
-    if store[user]
-      user = store[user]
-    else
-      user = store[user] = @template
+    user = @store[user]
+    if not user
+      user = @store[user] = @template
 
     user.stati.unshift status
     user.lastStatus = status
@@ -41,9 +41,9 @@ class List
       user.stati.pop
 
   saveAction: (user, command, args) ->
-    user = store[user]
+    user = @store[user]
     if not user
-      user = store[user] = @template
+      user = @store[user] = @template
 
     action = {
       action: command
@@ -59,7 +59,7 @@ class List
 
   get: (user) =>
     if user
-      store[user]
+      @store[user]
     else
       false
 
