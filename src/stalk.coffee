@@ -26,7 +26,7 @@ module.exports = (robot) ->
     list.saveStatus(from, status)
     res.send "#{from}: I set your status to: #{status}"
 
-  robot.respond /whats (\w) up to/i, (res) ->
+  robot.respond /upto ([\w'@.-:]*)/i, (res) ->
     [full, name] = res.match
     from = res.message.user.name.toLowerCase()
     notes = list.getUser(name)
@@ -40,7 +40,7 @@ module.exports = (robot) ->
     message += "I last heard from them on #{notes.lastUpdate}"
     res.send message
 
-  robot.respond /notes on ([\w'@.-:]*)/i, (res) ->
+  robot.respond /notes ([\w'@.-:]*)/i, (res) ->
     [full, name] = res.match
     from = res.message.user.name.toLowerCase()
     notes = list.getUser(name)
@@ -52,12 +52,12 @@ module.exports = (robot) ->
     message =  "#{from}: heres what I got for #{name}: \n"
     message += "Last Status: #{notes.lastStatus}\n"
     message += "Last Action: #{notes.lastAction}\n"
-    message += "last heard from: #{notes.lastUpdate}"
-    message += "Status: \n"
+    message += "Last heard from: #{notes.lastUpdate}\n"
+    message += "Recent Status': \n"
     message += "----------------------------------------\n"
     for status in notes.stati
       message += "\t#{status}\n"
-    message += "Actions\n"
+    message += "Recent Actions\n"
     message += "----------------------------------------\n"
     for action in notes.actions
       message += "\t#{action.command}: #{action.args}\n"

@@ -14,19 +14,19 @@
 7 silly cache add   rawSpec: '.',
 7 silly cache add   spec: '/Users/matt/Documents/Github/autovance/hubot-stalk',
 7 silly cache add   type: 'directory' }
-8 verbose addLocalDirectory /Users/matt/.npm/hubot-stalk/0.0.7/package.tgz not in flight; packing
-9 verbose tar pack [ '/Users/matt/.npm/hubot-stalk/0.0.7/package.tgz',
+8 verbose addLocalDirectory /Users/matt/.npm/hubot-stalk/0.0.8/package.tgz not in flight; packing
+9 verbose tar pack [ '/Users/matt/.npm/hubot-stalk/0.0.8/package.tgz',
 9 verbose tar pack   '/Users/matt/Documents/Github/autovance/hubot-stalk' ]
-10 verbose tarball /Users/matt/.npm/hubot-stalk/0.0.7/package.tgz
+10 verbose tarball /Users/matt/.npm/hubot-stalk/0.0.8/package.tgz
 11 verbose folder /Users/matt/Documents/Github/autovance/hubot-stalk
-12 info prepublish hubot-stalk@0.0.7
-13 verbose addLocalTarball adding from inside cache /Users/matt/.npm/hubot-stalk/0.0.7/package.tgz
-14 silly cache afterAdd hubot-stalk@0.0.7
-15 verbose afterAdd /Users/matt/.npm/hubot-stalk/0.0.7/package/package.json not in flight; writing
-16 verbose afterAdd /Users/matt/.npm/hubot-stalk/0.0.7/package/package.json written
+12 info prepublish hubot-stalk@0.0.8
+13 verbose addLocalTarball adding from inside cache /Users/matt/.npm/hubot-stalk/0.0.8/package.tgz
+14 silly cache afterAdd hubot-stalk@0.0.8
+15 verbose afterAdd /Users/matt/.npm/hubot-stalk/0.0.8/package/package.json not in flight; writing
+16 verbose afterAdd /Users/matt/.npm/hubot-stalk/0.0.8/package/package.json written
 17 silly publish { name: 'hubot-stalk',
 17 silly publish   description: 'Hubot knows what your team is doing.',
-17 silly publish   version: '0.0.7',
+17 silly publish   version: '0.0.8',
 17 silly publish   author: { name: 'Matt Forster', email: 'forster.matth@gmail.com' },
 17 silly publish   license: 'MIT',
 17 silly publish   keywords: [ 'team', 'status', 'hubot', 'hubot-scripts', 'stalk' ],
@@ -46,37 +46,34 @@
 17 silly publish      'grunt-contrib-watch': '~0.5.3' },
 17 silly publish   main: 'index.coffee',
 17 silly publish   scripts: { test: 'grunt test' },
+17 silly publish   private: 'true',
 17 silly publish   readme: '# hubot-stalk\n\nHubot knows what your team is doing.\n\nSee [`src/stalk.coffee`](src/stalk.coffee) for full documentation.\n\n## Installation\n\nIn hubot project repo, run:\n\n`npm install hubot-stalk --save`\n\nThen add **hubot-stalk** to your `external-scripts.json`:\n\n```json\n["hubot-stalk"]\n```\n\n## Sample Interaction\n\n```\nuser1>> hubot hello\nhubot>> hello!\n```\n',
 17 silly publish   readmeFilename: 'README.md',
-17 silly publish   gitHead: 'f2715729e134c07484c051514015118348d824b6',
+17 silly publish   gitHead: '0e81ca5305f1d1f2a688ce39ad36a6e514503073',
 17 silly publish   homepage: 'https://github.com/hubot-scripts/hubot-stalk#readme',
-17 silly publish   _id: 'hubot-stalk@0.0.7',
-17 silly publish   _shasum: 'b0b0be306eca4dc69df5ee3a633b8fbcf0e473ab',
+17 silly publish   _id: 'hubot-stalk@0.0.8',
+17 silly publish   _shasum: 'a2b6a6079680ef0bfde6bcbf8a42d06aaffd3d08',
 17 silly publish   _from: '.' }
 18 verbose getPublishConfig undefined
-19 silly mapToRegistry name hubot-stalk
-20 silly mapToRegistry using default registry
-21 silly mapToRegistry registry https://registry.npmjs.org/
-22 silly mapToRegistry uri https://registry.npmjs.org/hubot-stalk
-23 verbose publish registryBase https://registry.npmjs.org/
-24 silly publish uploading /Users/matt/.npm/hubot-stalk/0.0.7/package.tgz
-25 verbose stack Error: auth required for publishing
-25 verbose stack     at CachingRegistryClient.publish (/Users/matt/.nvm/versions/node/v4.0.0/lib/node_modules/npm/node_modules/npm-registry-client/lib/publish.js:30:14)
-25 verbose stack     at /Users/matt/.nvm/versions/node/v4.0.0/lib/node_modules/npm/lib/publish.js:134:14
-25 verbose stack     at mapToRegistry (/Users/matt/.nvm/versions/node/v4.0.0/lib/node_modules/npm/lib/utils/map-to-registry.js:55:3)
-25 verbose stack     at publish_ (/Users/matt/.nvm/versions/node/v4.0.0/lib/node_modules/npm/lib/publish.js:104:3)
-25 verbose stack     at Array.<anonymous> (/Users/matt/.nvm/versions/node/v4.0.0/lib/node_modules/npm/node_modules/slide/lib/bind-actor.js:15:8)
-25 verbose stack     at LOOP (/Users/matt/.nvm/versions/node/v4.0.0/lib/node_modules/npm/node_modules/slide/lib/chain.js:15:14)
-25 verbose stack     at LOOP (/Users/matt/.nvm/versions/node/v4.0.0/lib/node_modules/npm/node_modules/slide/lib/chain.js:14:28)
-25 verbose stack     at chain (/Users/matt/.nvm/versions/node/v4.0.0/lib/node_modules/npm/node_modules/slide/lib/chain.js:20:5)
-25 verbose stack     at /Users/matt/.nvm/versions/node/v4.0.0/lib/node_modules/npm/lib/publish.js:73:5
-25 verbose stack     at RES (/Users/matt/.nvm/versions/node/v4.0.0/lib/node_modules/npm/node_modules/inflight/inflight.js:23:14)
-26 verbose cwd /Users/matt/Documents/Github/autovance/hubot-stalk
-27 error Darwin 14.5.0
-28 error argv "/Users/matt/.nvm/versions/node/v4.0.0/bin/node" "/Users/matt/.nvm/versions/node/v4.0.0/bin/npm" "publish"
-29 error node v4.0.0
-30 error npm  v2.14.2
-31 error code ENEEDAUTH
-32 error need auth auth required for publishing
-32 error need auth You need to authorize this machine using `npm adduser`
-33 verbose exit [ 1, true ]
+19 verbose stack Error: This package has been marked as private
+19 verbose stack Remove the 'private' field from the package.json to publish it.
+19 verbose stack     at publish_ (/Users/matt/.nvm/versions/node/v4.0.0/lib/node_modules/npm/lib/publish.js:98:5)
+19 verbose stack     at Array.<anonymous> (/Users/matt/.nvm/versions/node/v4.0.0/lib/node_modules/npm/node_modules/slide/lib/bind-actor.js:15:8)
+19 verbose stack     at LOOP (/Users/matt/.nvm/versions/node/v4.0.0/lib/node_modules/npm/node_modules/slide/lib/chain.js:15:14)
+19 verbose stack     at LOOP (/Users/matt/.nvm/versions/node/v4.0.0/lib/node_modules/npm/node_modules/slide/lib/chain.js:14:28)
+19 verbose stack     at chain (/Users/matt/.nvm/versions/node/v4.0.0/lib/node_modules/npm/node_modules/slide/lib/chain.js:20:5)
+19 verbose stack     at /Users/matt/.nvm/versions/node/v4.0.0/lib/node_modules/npm/lib/publish.js:73:5
+19 verbose stack     at RES (/Users/matt/.nvm/versions/node/v4.0.0/lib/node_modules/npm/node_modules/inflight/inflight.js:23:14)
+19 verbose stack     at f (/Users/matt/.nvm/versions/node/v4.0.0/lib/node_modules/npm/node_modules/once/once.js:17:25)
+19 verbose stack     at /Users/matt/.nvm/versions/node/v4.0.0/lib/node_modules/npm/lib/cache.js:350:14
+19 verbose stack     at /Users/matt/.nvm/versions/node/v4.0.0/lib/node_modules/npm/node_modules/write-file-atomic/index.js:29:15
+20 verbose cwd /Users/matt/Documents/Github/autovance/hubot-stalk
+21 error Darwin 14.5.0
+22 error argv "/Users/matt/.nvm/versions/node/v4.0.0/bin/node" "/Users/matt/.nvm/versions/node/v4.0.0/bin/npm" "publish"
+23 error node v4.0.0
+24 error npm  v2.14.2
+25 error This package has been marked as private
+25 error Remove the 'private' field from the package.json to publish it.
+26 error If you need help, you may report this error at:
+26 error     <https://github.com/npm/npm/issues>
+27 verbose exit [ 1, true ]

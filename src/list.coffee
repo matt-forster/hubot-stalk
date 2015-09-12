@@ -40,8 +40,6 @@ class List
 
   saveStatus: (user, status) ->
     user = @getUser(user)
-
-    @robot.logger.debug user
     user.stati.unshift status
     user.lastStatus = status
     user.lastUpdate = new Date()
@@ -52,7 +50,6 @@ class List
 
   saveAction: (user, command) ->
     user = @getUser(user)
-
     user.actions.unshift command
     user.lastAction = command
     user.lastUpdate = new Date()
