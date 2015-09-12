@@ -41,10 +41,10 @@ class List
       user.stati.pop
 
   saveAction: (user, command, args) ->
-  user = @store[user]
-  if not user
-    @store[user] = @template
     user = @store[user]
+    if not user
+      @store[user] = @template
+      user = @store[user]
 
     action = {
       action: command
