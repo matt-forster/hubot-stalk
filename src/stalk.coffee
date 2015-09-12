@@ -5,8 +5,8 @@
 #
 # Commands:
 #   [stalk] hubot status <status> : Set your status
-#   [stalk] hubot notes <name> : See hals notes on that person
-#   [stalk] hubot upto <name> : See what hal thinks somebody is up to
+#   [stalk] hubot notes <name> : See what hubot has on somebody
+#   [stalk] hubot upto <name> : See what hubot thinks somebody is up to
 #
 # Notes:
 #
@@ -31,13 +31,11 @@ module.exports = (robot) ->
     from = res.message.user.name.toLowerCase()
     notes = list.getUser(name)
 
-    if not notes
+    if not notes.lastStatus
       res.send "I got nuthin on #{name} chief!"
       return
 
-    message = "#{from}: #{name} told me that they are: #{notes.lastStatus}\n"
-    message += "Their last command was: #{notes.lastCommand}\n"
-    message += "I last heard from them on #{notes.lastUpdate}"
+    message = "#{name}: #{notes.lastStatus}\n"
     res.send message
 
   robot.respond /notes ([\w'@.-:]*)/i, (res) ->
@@ -45,7 +43,7 @@ module.exports = (robot) ->
     from = res.message.user.name.toLowerCase()
     notes = list.getUser(name)
 
-    if not notes
+    if not notes.lastStatus
       res.send "I got nuthin on #{name} chief!"
       return
 

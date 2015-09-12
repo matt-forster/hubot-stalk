@@ -45,6 +45,7 @@ class List
 
     if user.stati.length > @statusThreshold
       user.stati.pop()
+    @robot.brain.save()
 
   saveAction: (name, command) ->
     user = @getUser(name)
