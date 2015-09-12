@@ -30,7 +30,7 @@ class List
   saveStatus: (user, status) ->
     user = @store[user]
     @robot.logger.debug user
-    if not user
+    if user is undefined
       @store[user] = @template
       user = @store[user]
 
@@ -44,7 +44,7 @@ class List
 
   saveAction: (user, command, args) ->
     user = @store[user]
-    if not user
+    if user is undefined
       @store[user] = @template
       user = @store[user]
 

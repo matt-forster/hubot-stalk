@@ -1,7 +1,7 @@
 {
   "name": "hubot-stalk",
   "description": "Hubot knows what your team is doing.",
-  "version": "0.0.5",
+  "version": "0.0.6",
   "author": "Matt Forster <forster.matth@gmail.com>",
   "license": "MIT",
 
