@@ -15,15 +15,19 @@ class List
   @actionThreshold = 5 # number of actions to keep in memory
 
   constructor: (@robot) ->
-    store = robot.brain.data.stalkers_notes || {};
+    loadStore = =>
+      @store = robot.brain.data.stalkers_notes || {};
+      @robot.logger.debug "Plus Plus Data Loaded: " + JSON.stringify(@storage, null, 2)
+    @robot.brain.on "loaded", loadStore
 
-  @follow: (user) ->
+
+  follow: (user) ->
     store[user].following = true
 
-  @following: (user) ->
+  following: (user) ->
     store[user].following
 
-  @saveStatus: (user, status) ->
+  saveStatus: (user, status) ->
     if store[user]
       user = store[user]
     else
@@ -36,7 +40,7 @@ class List
     if user.stati.length > @statusThreshold
       user.stati.pop
 
-  @saveAction: (user, command, args) ->
+  saveAction: (user, command, args) ->
     user = store[user]
     if not user
       user = store[user] = @template
@@ -53,7 +57,7 @@ class List
     if user.actions.length > @actionThreshold
       user.actions.pop
 
-  @get: (user) =>
+  get: (user) =>
     if user
       store[user]
     else
