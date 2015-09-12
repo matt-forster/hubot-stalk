@@ -13,9 +13,9 @@
 # Author:
 #   Matt Forster[@autovance]
 
-List = require(./list)
+List = require('./list')
 
-possibleCommands = ['deploy', 'deploys', 'notes on' 'whats']
+possibleCommands = ['deploy', 'deploys', 'notes on', 'whats']
 
 module.exports = (robot) ->
   list = new List(robot)
