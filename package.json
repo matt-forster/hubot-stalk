@@ -1,7 +1,7 @@
 {
   "name": "hubot-stalk",
   "description": "Hubot knows what your team is doing.",
-  "version": "1.0.0-0",
+  "version": "1.0.1",
   "author": "Matt Forster <forster.matth@gmail.com>",
   "license": "MIT",
   "keywords": [
@@ -34,6 +34,5 @@
   "main": "index.coffee",
   "scripts": {
     "test": "grunt test"
-  },
-  "private": "true"
+  }
 }
