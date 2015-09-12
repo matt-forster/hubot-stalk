@@ -20,13 +20,13 @@ possibleCommands = ['deploy', 'deploys', 'notes on', 'whats']
 module.exports = (robot) ->
   list = new List(robot)
 
-  robot.respond /status (.+)/i, res ->
+  robot.respond /status (.+)/i, (res) ->
     [full, status] = res.match
     from = res.message.user.name.toLowerCase()
     list.saveStatus(from, status)
     res.send "#{from}: I set your status to: #{status}"
 
-  robot.respond /whats (\w) up to/, res ->
+  robot.respond /whats (\w) up to/i, (res) ->
     [full, name] = res.match
     from = res.message.user.name.toLowerCase()
     notes = list.get(name)
@@ -35,7 +35,7 @@ module.exports = (robot) ->
     message += "I last heard from them on #{notes.lastUpdate}"
     res.send message
 
-  robot.respond /notes on ([\w'@.-:]*)/i, res ->
+  robot.respond /notes on ([\w'@.-:]*)/i, (res) ->
     [full, name] = res.match
     from = res.message.user.name.toLowerCase()
     notes = list.get(name)
@@ -65,7 +65,7 @@ module.exports = (robot) ->
     (\w)
     \s*
     (\s[\w'@.-:]*)
-  ///i, res ->
+  ///i, (res) ->
     [full, command, args] = res.match
     from = res.message.user.name.toLowerCase()
 
