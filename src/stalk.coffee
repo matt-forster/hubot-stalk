@@ -4,11 +4,11 @@
 # Configuration:
 #
 # Commands:
-#   status <status> : Set your status
-#   notes on <name> : See hals notes on that person
+#   [stalk] hubot status <status> : Set your status
+#   [stalk] hubot notes <name> : See hals notes on that person
+#   [stalk] hubot upto <name> : See what hal thinks somebody is up to
 #
 # Notes:
-#   <optional notes required for the script>
 #
 # Author:
 #   Matt Forster[@autovance]
