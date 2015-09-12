@@ -1,25 +1,26 @@
 {
   "name": "hubot-stalk",
   "description": "Hubot knows what your team is doing.",
-  "version": "0.0.6",
+  "version": "0.0.7",
   "author": "Matt Forster <forster.matth@gmail.com>",
   "license": "MIT",
-
-  "keywords": ["team","status","hubot","hubot-scripts","stalk"],
-
+  "keywords": [
+    "team",
+    "status",
+    "hubot",
+    "hubot-scripts",
+    "stalk"
+  ],
   "repository": {
     "type": "git",
     "url": "git://github.com/hubot-scripts/hubot-stalk.git"
   },
-
   "bugs": {
     "url": "https://github.com/hubot-scripts/hubot-stalk/issues"
   },
-
   "dependencies": {
     "coffee-script": "~1.6"
   },
-
   "devDependencies": {
     "mocha": "*",
     "chai": "*",
@@ -30,9 +31,7 @@
     "matchdep": "~0.1.2",
     "grunt-contrib-watch": "~0.5.3"
   },
-
   "main": "index.coffee",
-
   "scripts": {
     "test": "grunt test"
   }
