@@ -13,10 +13,10 @@
   ],
   "repository": {
     "type": "git",
-    "url": "git://github.com/hubot-scripts/hubot-stalk.git"
+    "url": "git://github.com/forstermatth/hubot-stalk.git"
   },
   "bugs": {
-    "url": "https://github.com/hubot-scripts/hubot-stalk/issues"
+    "url": "https://github.com/forstermatth/hubot-stalk/issues"
   },
   "dependencies": {
     "coffee-script": "~1.6"
