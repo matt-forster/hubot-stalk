@@ -29,7 +29,12 @@ module.exports = (robot) ->
   robot.respond /whats (\w) up to/i, (res) ->
     [full, name] = res.match
     from = res.message.user.name.toLowerCase()
-    notes = list.get(name)
+    notes = list.getUser(name)
+
+    if not notes
+      res.send "I got nuthin on #{name} chief!"
+      return
+
     message = "#{from}: #{name} told me that they are: #{notes.lastStatus}\n"
     message += "Their last command was: #{notes.lastCommand}\n"
     message += "I last heard from them on #{notes.lastUpdate}"
@@ -38,7 +43,7 @@ module.exports = (robot) ->
   robot.respond /notes on ([\w'@.-:]*)/i, (res) ->
     [full, name] = res.match
     from = res.message.user.name.toLowerCase()
-    notes = list.get(name)
+    notes = list.getUser(name)
 
     if not notes
       res.send "I got nuthin on #{name} chief!"
@@ -56,7 +61,6 @@ module.exports = (robot) ->
     message += "----------------------------------------\n"
     for action in notes.actions
       message += "\t#{action.command}: #{action.args}\n"
-
     res.send message
 
   # Save actions
@@ -66,10 +70,16 @@ module.exports = (robot) ->
     \s*
     (\s[\w'@.-:]*)
   ///i, (res) ->
-    [full, command, args] = res.match
+    [full, action, args] = res.match
     from = res.message.user.name.toLowerCase()
 
     if command not in possibleCommands
       return
 
-    list.saveAction(from, command, args);
+    command = {
+      action: action,
+      args: args
+    }
+
+    if list.following(from)
+      list.saveAction(from, command);
