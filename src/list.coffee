@@ -11,8 +11,8 @@ class List
 
   @robot = null
   @store = null
-  @statusThreshold = 5 # number of status to keep in memory
-  @actionThreshold = 10 # number of actions to keep in memory
+  @statusThreshold = 3 # number of status to keep in memory
+  @actionThreshold = 5 # number of actions to keep in memory
 
   constructor: (@robot) ->
     store = robot.brain.data.stalkers_notes || {};
@@ -58,3 +58,5 @@ class List
       store[user]
     else
       false
+
+module.exports = List

@@ -13,11 +13,12 @@
 # Author:
 #   Matt Forster[@autovance]
 
-list = require(./list)
+List = require(./list)
 
 possibleCommands = ['deploy', 'deploys', 'notes on' 'whats']
 
 module.exports = (robot) ->
+  list = new List(robot)
 
   robot.respond /status (.+)/i, res ->
     [full, status] = res.match
