@@ -29,10 +29,12 @@ class List
 
   saveStatus: (user, status) ->
     user = @store[user]
+    @robot.logger.debug user
     if not user
       @store[user] = @template
       user = @store[user]
 
+    @robot.logger.debug user
     user.stati.unshift status
     user.lastStatus = status
     user.lastUpdate = new Date()
