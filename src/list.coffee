@@ -21,7 +21,6 @@ class List
       @robot.logger.debug "Stalkers Notes Loaded: " + JSON.stringify(@store, null, 2)
     @robot.brain.on "loaded", loadStore
 
-
   follow: (user) ->
     @store[user].following = true
 
@@ -31,7 +30,8 @@ class List
   saveStatus: (user, status) ->
     user = @store[user]
     if not user
-      user = @store[user] = @template
+      @store[user] = @template
+      user = @store[user]
 
     user.stati.unshift status
     user.lastStatus = status
@@ -41,9 +41,10 @@ class List
       user.stati.pop
 
   saveAction: (user, command, args) ->
+  user = @store[user]
+  if not user
+    @store[user] = @template
     user = @store[user]
-    if not user
-      user = @store[user] = @template
 
     action = {
       action: command
